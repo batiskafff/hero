@@ -2,6 +2,9 @@ module.exports = function(config) {
   var testWebpackConfig = require('./webpack.test.js')({env: 'test'});
 
   var configuration = {
+    //CUSTOM CONFIG
+    context: 'test',
+
 
     // base path that will be used to resolve all patterns (e.g. files, exclude)
     basePath: '',
@@ -71,16 +74,8 @@ module.exports = function(config) {
      * available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
      */
     browsers: [
-      'Chrome'
+      'PhantomJS'
     ],
-
-    customLaunchers: {
-      ChromeTravisCi: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
-
     /*
      * Continuous Integration mode
      * if true, Karma captures browsers, runs the tests and exits
@@ -94,5 +89,11 @@ module.exports = function(config) {
     ];
   }
 
+  console.log('===karma.conf.js===');
+  //console.log(process.env);//npm_lifecycle_script: 'karma start --super=dron',
+  console.log('===================');
   config.set(configuration);
+  //npm test --super=star ==>> npm_config_argv: '{"remain":[],"cooked":["test","--super","star"],"original":["test","--super=star"]}',
+
+  //karma start --super=dron  ==>> //npm_lifecycle_script: 'karma start --super=dron',
 };

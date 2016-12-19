@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">82.35% </span>
+        <span class="strong">47.06% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/17</span>
+        <span class='fraction'>8/17</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">71.43% </span>
+        <span class="strong">14.29% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/7</span>
+        <span class='fraction'>1/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">46.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/15</span>
+        <span class='fraction'>7/15</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -128,26 +128,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,30 +182,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutComponent {
   localState: any;
-  constructor(public route: ActivatedRoute) {
+<span class="fstat-no" title="function not covered" >  constructor(public <span class="cstat-no" title="statement not covered" >route: ActivatedRoute)</span></span> {
 &nbsp;
   }
 &nbsp;
-  ngOnInit() {
-    this.route
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >    this.route</span>
       .data
-      .subscribe((data: any) =&gt; {
+      .subscribe(<span class="fstat-no" title="function not covered" >(data: any)</span> =&gt; {
         // your resolved data from route
-        this.localState = data.yourData;
+<span class="cstat-no" title="statement not covered" >        this.localState = data.yourData;</span>
       });
 &nbsp;
-    console.log('hello `About` component');
+<span class="cstat-no" title="statement not covered" >    console.log('hello `About` component');</span>
     // static data that is bundled
     // var mockData = require('assets/mock-data/mock-data.json');
     // console.log('mockData', mockData);
     // if you're working with mock data you can also use http.get('assets/mock-data/mock-data.json')
-    this.asyncDataWithWebpack();
+<span class="cstat-no" title="statement not covered" >    this.asyncDataWithWebpack();</span>
   }
-  asyncDataWithWebpack() {
+<span class="fstat-no" title="function not covered" >  asyncDataWithWebpack() {</span>
     // you can also async load mock data with 'es6-promise-loader'
     // you would do this if you don't want the mock-data bundled
     // remember that 'es6-promise-loader' is a promise
-    setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      System.import('../../assets/mock-data/mock-data.json')</span>
         .then(<span class="fstat-no" title="function not covered" >json </span>=&gt; {
@@ -223,7 +223,7 @@ export class AboutComponent {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 15 2016 16:01:13 GMT-0500 (EST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 19 2016 15:13:17 GMT-0500 (EST)
 </div>
 </div>
 <script src="../../prettify.js"></script>
