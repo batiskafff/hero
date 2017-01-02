@@ -1,19 +1,21 @@
-import { Component }          from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  //moduleId: module.id,
-  selector: 'my-app',
-  template: `
-    <h1>{{title}}</h1>
-    <nav>
-      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `//,
-  //styleUrls: ['app.component.css']
+    selector: 'my-app',
+    template: `
+        <nav>
+            <a [routerLink]="''" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Login(Home)</a>
+            <a [routerLink]="'./courses'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Courses list</a>
+            <a [routerLink]="['courses', 'new']" [routerLinkActive]="'active'">Add Course</a>
+            <a [routerLink]="['courses', ':id']" [routerLinkActive]="'active'">Edit Course</a>
+        </nav>
+        <header>Header</header>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+        <footer>Footer</footer>
+    `,
+    styleUrls: ['app.component.scss']
 })
 
-export class AppComponent {
-  title = 'Tour of Heroes';
-}
+export class AppComponent {}

@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+    <div>
+        Login: <input type="text" formControlName="login" name="login">
+        <span *ngIf="form.controls.login.errors?.required && form.controls.login.touched">Required</span>
+        <span *ngIf="form.controls.login.errors?.pattern && form.controls.login.touched">Pattern</span>
+    </div>
+    <div>
+        Password: <input type="password" formControlName="password" name="password">
+        <span *ngIf="form.controls.password.errors?.required && form.controls.password.touched">Required</span>
+    </div>
+    <button type="button" [disabled]="form.invalid" (click)="logIn()" name="button">Log In</button>
+    <button type="button" [disabled]="form.invalid" (click)="logOut()" name="button">Log Out</button>
+
+    <pre>
+        {{form.value | json}}
+    </pre>
+    <pre>
+        {{isLoggedIn}}
+    </pre>
+
+</form>

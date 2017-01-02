@@ -1,48 +1,39 @@
-console.log('test');
+ //import './util/rxjs-extensions';
 
-import './util/rxjs-extensions';
+import { NgModule }              from '@angular/core';
+import { BrowserModule }         from '@angular/platform-browser';
+import { FormsModule }           from '@angular/forms';
+import { FormBuilder }           from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
 
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
-import { HttpModule }    from '@angular/http';
+//import { HttpModule }    from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule }      from './app-routing.module';
+import { IsLoggedInGuard }       from './services/CanActivateGuard';
+import { LoginService }          from './services/Login.service';
 
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './util/in-memory-data.service';
-
-import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard/dashboard.component';
-import { HeroesComponent }      from './heroes/heroes.component';
-import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
-import { HeroService }          from './service/hero.service';
-import { HeroSearchComponent }  from './hero-search/hero-search.component';
+import { AppComponent }          from './app.component';
+import { LoginComponent }        from './Login/login.component';
+import { CoursesComponent }      from './Courses/courses.component'
+import { AddCourseComponent }    from './AddCourse/add-course.component';
+import { EditCourseComponent }   from './EditCourse/edit-course.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
-    HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AppRoutingModule
+    ReactiveFormsModule
   ],
   declarations: [
-    AppComponent,
-    DashboardComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    HeroSearchComponent
+      AppComponent,
+      LoginComponent,
+      CoursesComponent,
+      AddCourseComponent,
+      EditCourseComponent
   ],
-  providers: [ HeroService ],
+  providers: [ IsLoggedInGuard, FormBuilder, LoginService ],
   bootstrap: [ AppComponent ]
+
 })
 export class AppModule { }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

@@ -89,9 +89,9 @@ module.exports = function(config) {
     ];
   }
 
-  console.log('===karma.conf.js===');
+  //console.log('===karma.conf.js===');
   //console.log(process.env);//npm_lifecycle_script: 'karma start --super=dron',
-  console.log('===================');
+  //console.log('===================');
   config.set(configuration);
   //npm test --super=star ==>> npm_config_argv: '{"remain":[],"cooked":["test","--super","star"],"original":["test","--super=star"]}',
 
