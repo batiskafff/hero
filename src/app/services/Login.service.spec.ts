@@ -16,6 +16,6 @@ describe('Login Service', () => {
 
     it('should be logged in affter log Out', () => {
         service.logOut();
-        expect(service.getStatus()).toBeTruthy();
+        expect(service.getStatus()).toBeFalsy();
     });
 });

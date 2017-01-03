@@ -1,4 +1,4 @@
-let LoginServiceMock = {
+let LoginServiceMock: any = {
     logIn: () => {
     },
 

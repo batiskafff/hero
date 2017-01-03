@@ -1,10 +1,10 @@
 import { IsLoggedInGuard }  from './IsLoggedInGuard';
-import { LoginServiceMock } from './Login.service.mock'
-import { LoginService }     from './Login.service'
+import { LoginServiceMock } from './Login.service.mock';
+import { LoginService }     from './Login.service';
 
 import { inject, TestBed }  from '@angular/core/testing';
 
-fdescribe('Is Logged In Guard thru LoginServiceMock', () => {
+describe('Is Logged In Guard(thru LoginServiceMock)', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [ {provide: LoginService, useValue: LoginServiceMock }, IsLoggedInGuard ]
   }));
