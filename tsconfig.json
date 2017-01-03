@@ -22,11 +22,7 @@
       "node",
       "source-map",
       "uglify-js",
-      "fs-extra",
       "webpack"
-    ],
-    "typeRoots": [
-      "../node_modules/@types"
     ]
   },
   "exclude": [

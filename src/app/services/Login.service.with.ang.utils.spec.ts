@@ -1,5 +1,5 @@
 import { inject, TestBed } from '@angular/core/testing';
-import { LoginService } from './Login.service';
+import { LoginService }    from './Login.service';
 
 describe('Service: LanguagesService', () => {
   beforeEach(() => TestBed.configureTestingModule({
