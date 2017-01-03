@@ -1,20 +1,12 @@
-import { Injectable } from '@angular/core';
+let LoginServiceMock = {
+    logIn: () => {
+    },
 
-@Injectable()
-export class LoginServiceMock {
-    public isLoggedIn: boolean = false;
+    logOut: () => {
+    },
 
-    constructor() { }
-
-    logIn(): void {
-
-    }
-
-    logOut(): void {
-
-    }
-
-    getStatus(): boolean {
-        return true;
+    getStatus: () => {
     }
 }
+
+export { LoginServiceMock }
