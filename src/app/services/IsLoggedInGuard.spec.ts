@@ -1,19 +1,17 @@
 import { IsLoggedInGuard } from './IsLoggedInGuard';
+import { LoginServiceMock } from './Login.service.mock'
 import { LoginService } from './Login.service'
 
-describe('Is Logged In Guard', () => {
-    let service: LoginService;
-    let guard: IsLoggedInGuard;
+import { inject, TestBed } from '@angular/core/testing';
 
-    beforeEach(() => {
-        //service = ;
-        guard = new IsLoggedInGuard(new LoginService());
-    });
+fdescribe('Is Logged In Guard', () => {
+  beforeEach(() => TestBed.configureTestingModule({
+    providers: [ {provide: LoginService, useValue: LoginServiceMock }, IsLoggedInGuard ]
+  }));
 
-    it ('should not allow to activate page when logged out', () => {
-        service.logOut();
+  it('should not allow to activate page when logged out', inject([LoginService, IsLoggedInGuard], (service, guard) => {
+      service.logOut();
 
-        expect(IsLoggedInGuard.canActivate()).toBeTruthy();
-    });
-
+      expect(guard.canActivate()).toBeFalsy();
+  }));
 });

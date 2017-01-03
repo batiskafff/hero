@@ -20,10 +20,13 @@
       "hammerjs",
       "jasmine",
       "node",
-      "selenium-webdriver",
       "source-map",
       "uglify-js",
+      "fs-extra",
       "webpack"
+    ],
+    "typeRoots": [
+      "../node_modules/@types"
     ]
   },
   "exclude": [

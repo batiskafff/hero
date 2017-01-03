@@ -1,7 +1,7 @@
 .idea
 node_modules
 jspm_packages
-coverage
+
 link-checker-results.txt
 **/*npm-debug.log.*
 *.js
