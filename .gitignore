@@ -17,3 +17,4 @@ _temp
 !systemjs.config.js
 !wallaby.js
 !config/*.js
+!*config.js
