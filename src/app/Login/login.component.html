@@ -9,7 +9,7 @@
         <span *ngIf="form.controls.password.errors?.required && form.controls.password.touched">Required</span>
     </div>
     <button type="button" [disabled]="form.invalid" (click)="logIn()" name="button">Log In</button>
-    <button type="button" [disabled]="form.invalid" (click)="logOut()" name="button">Log Out</button>
+    <button type="button" (click)="logOut()" name="button">Log Out</button>
 
     <pre>
         {{form.value | json}}

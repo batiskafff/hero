@@ -1,0 +1,25 @@
+@import './../../assets/scss/variables';
+
+.courses-list__course-wrapper {
+    padding: 10px;
+    margin: 15px;
+    border: solid 1px $gray;
+    background: $light;
+
+    color: $brown;
+}
+
+.courses-list__course-title {
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.courses-list__course-overview {
+    width: 75%;
+    float: left;
+}
+
+.courses-list__course-actions {
+    width: 25%;
+    float: left;
+}

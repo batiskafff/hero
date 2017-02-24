@@ -1,0 +1,16 @@
+<div *ngFor="let course of courseList">
+    <div class="courses-list__course-wrapper clearfix">
+        <article class="courses-list__course-overview">
+            <h3 class="courses-list__course-title">{{course.title}}</h3>
+            <span>{{course.length | customTimeFormat}}</span>
+            <div>Description: {{course.description}}</div>
+        </article>
+        <div class="courses-list__course-actions">
+            <button [routerLink]="['../courses', course.id]">Edit</button>
+            <button>Delete</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="!courseList.length">
+    Loading...
+</div>

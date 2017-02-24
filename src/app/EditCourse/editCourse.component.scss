@@ -1,0 +1,37 @@
+@import './../../assets/scss/variables';
+
+.edit-course__form-row {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 30px;
+    padding: 10px;
+    color: $brown;
+}
+
+.edit-courses__form-labels {
+    width: 50%;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+}
+
+.edit-courses__form-fields {
+    width: 49%;
+    display: inline-block;
+
+    input,
+    textarea {
+        width: 200px;
+    }
+
+    select {
+        width: 100px;
+        height: 100px;
+    }
+
+    textarea {
+        height: 50px;
+        resize: none;
+    }
+}

@@ -1,0 +1,74 @@
+<form *ngIf="course" class="edit-courses__form">
+    <div class="edit-course__form-row">
+        <div class="edit-courses__form-labels">
+            <label>Id:</label>
+        </div>
+        <div class="edit-courses__form-fields">
+            <label>{{course?.id}}</label>
+        </div>
+    </div>
+    <div class="edit-course__form-row">
+        <div class="edit-courses__form-labels">
+            <label>Title:</label>
+        </div>
+        <div class="edit-courses__form-fields">
+            <input type="text" [(ngModel)]="course.title" name="title">
+        </div>
+    </div>
+
+    <div class="edit-course__form-row">
+        <div class="edit-courses__form-labels">
+            <label>Description:</label>
+        </div>
+        <div class="edit-courses__form-fields">
+            <textarea type="text" [(ngModel)]="course.description" name="description"></textarea>
+        </div>
+    </div>
+
+    <div class="edit-course__form-row">
+        <div class="edit-courses__form-labels">
+            <label>Date:</label>
+        </div>
+        <div class="edit-courses__form-fields">
+            <input type="date" [(ngModel)]="course.date" name="date">
+        </div>
+    </div>
+
+    <div class="edit-course__form-row">
+        <div class="edit-courses__form-labels">
+            <label>Length:</label>
+        </div>
+        <div class="edit-courses__form-fields">
+            <input type="text" [(ngModel)]="course.length" name="length">
+            <span>{{course.length | customTimeFormat}}</span>
+        </div>
+    </div>
+
+    <div class="edit-course__form-row">
+        <div class="edit-courses__form-labels">
+            <label>Course Authors:</label>
+        </div>
+        <div class="edit-courses__form-fields">
+            <!--TODO: make directive here-->
+            <author-list [(authorList)]="course.authorList"></author-list>
+        </div>
+    </div>
+
+    <div class="edit-course__form-row">
+        <div class="edit-courses__form-labels">
+        </div>
+        <div class="edit-courses__form-fields">
+            <button (click)="checkBindings()">Save</button>
+            <button (click)="goBack()">Cancel</button>
+        </div>
+    </div>
+
+    <pre>
+        {{course | json}}
+    </pre>
+
+</form>
+
+<div *ngIf="!course">
+    Loading course data...
+</div>

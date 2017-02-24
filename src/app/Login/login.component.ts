@@ -17,10 +17,6 @@ export class LoginComponent {
             login: ['1', [Validators.required, Validators.pattern(/^\d+$/)]],
             password: ['', [Validators.required]]
         });
-        // this.form = new FormGroup({
-        //     login: new FormControl('1', [Validators.required]),
-        //     password: new FormControl('2', [Validators.required])
-        // });
 
         this.updateLogInStatus();
     }

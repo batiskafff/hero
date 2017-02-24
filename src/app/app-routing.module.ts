@@ -2,9 +2,9 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent }       from './Login/login.component';
-import { CoursesComponent }     from './Courses/courses.component';
-import { AddCourseComponent }   from './AddCourse/add-course.component';
-import { EditCourseComponent }  from './EditCourse/edit-course.component';
+import { CoursesComponent }     from './CoursesList/coursesList.component';
+import { AddCourseComponent }   from './AddCourse/addCourse.component';
+import { EditCourseComponent }  from './EditCourse/editCourse.component';
 
 import { IsLoggedInGuard }      from './services/IsLoggedInGuard';
 

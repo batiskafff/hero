@@ -10,11 +10,9 @@ import { LoginService } from '../services/Login.service';
 })
 
 export class AddCourseComponent {
-
     isLogedIn: boolean;
 
     constructor(private loginService: LoginService) {
         this.isLogedIn = loginService.getStatus();
     }
-
 }

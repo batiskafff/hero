@@ -25,7 +25,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
  */
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
-  title: '',
+  title: 'Course List Angular2',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };

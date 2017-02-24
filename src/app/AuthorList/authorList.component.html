@@ -1,0 +1,10 @@
+<select [(ngModel)]="selectedInAuthorList" multiple="multiple">
+    <option *ngFor="let author of authorList">{{author}}</option>
+</select>
+
+<button (click)="removeFromAuthorList()">>></button>
+<button (click)="addToAuthorList()"><<</button>
+
+<select [(ngModel)]="selectedInAllAuthorList" multiple="multiple">
+    <option *ngFor="let author of allAuthorsExceptSelected">{{author}}</option>
+</select>
