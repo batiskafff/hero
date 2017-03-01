@@ -1,5 +1,5 @@
 import { Injectable }        from '@angular/core';
-import { Course, ICourse }   from './../declaration/Course';
+import { Course, ICourse }   from './../models/Course';
 import { CourseListService } from './CourseList.service';
 import { Http }              from '@angular/http';
 

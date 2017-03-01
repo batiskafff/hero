@@ -5,17 +5,18 @@ import { AuthorListService }        from '../services/AuthorList.service';
 
 @Component({
     selector: 'author-list',
-    templateUrl: 'authorList.component.html'
+    //template: require('./author.list.component.html')
+    templateUrl: './author.list.component.html'
 })
 
 export class AuthorListComponent implements OnInit  {
     @Input()
     authorList: string[];
-    allAuthorsList: string[];
 
     @Output()
-    authorListChange: EventEmitter<string[]> = new EventEmitter();
+    authorListChange: EventEmitter<string[]> = new EventEmitter<string[]>();
 
+    allAuthorsList: string[];
     allAuthorsExceptSelected: string[];
 
     selectedInAuthorList: string[];
@@ -47,7 +48,7 @@ export class AuthorListComponent implements OnInit  {
 
     setAuthorList(value): void {
         this.authorList = value;
-        this.authorListChange.next(this.authorList);
+        this.authorListChange.emit(this.authorList);
     }
 
     removeFromAuthorList():void {

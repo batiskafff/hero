@@ -3,7 +3,7 @@ import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common'
 
-import { Course }                 from '../declaration/Course';
+import { Course }                 from '../models/Course';
 import { CourseListService }      from '../services/CourseList.service';
 import { AuthorListService }      from '../services/AuthorList.service';
 

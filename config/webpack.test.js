@@ -32,7 +32,9 @@ module.exports = function (options) {
      * Do not change, leave as is or it wont work.
      * See: https://github.com/webpack/karma-webpack#source-maps
      */
+     // FIXME: need proper source map loader
     devtool: 'inline-source-map',
+    //devtool: 'cheap-module-source-map',
 
     /**
      * Options affecting the resolving of modules.
@@ -91,7 +93,12 @@ module.exports = function (options) {
          */
         {
           test: /\.ts$/,
-          loader: 'awesome-typescript-loader',
+        //  loader: 'awesome-typescript-loader',
+          use: [
+            'awesome-typescript-loader',
+            'angular2-template-loader'
+          ],
+
           query: {
             // use inline sourcemaps for "karma-remap-coverage" reporter
             sourceMap: false,

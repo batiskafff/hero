@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit }    from '@angular/core';
 
-import { Course }            from '../declaration/Course';
+import { Course }            from '../models/Course';
 import { CustomTimeFormat }  from '../pipes/customTimeFormat.pipe';
 import { CourseListService } from '../services/CourseList.service';
 

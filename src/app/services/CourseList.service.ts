@@ -1,5 +1,5 @@
 import { Injectable }      from '@angular/core';
-import { Course, ICourse } from './../declaration/Course';
+import { Course, ICourse } from './../models/Course';
 import { Http }            from '@angular/http';
 
 import { Observable }      from 'rxjs/Observable';
