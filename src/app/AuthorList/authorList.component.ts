@@ -16,7 +16,7 @@ export class AuthorListComponent implements OnInit  {
     @Output()
     authorListChange: EventEmitter<string[]> = new EventEmitter<string[]>();
 
-    allAuthorsList: string[];
+    allAuthorsList: string[] = [];
     allAuthorsExceptSelected: string[];
 
     selectedInAuthorList: string[];
@@ -48,7 +48,7 @@ export class AuthorListComponent implements OnInit  {
 
     setAuthorList(value): void {
         this.authorList = value;
-        this.authorListChange.emit(this.authorList);
+        this.authorListChange.next(this.authorList);
     }
 
     removeFromAuthorList():void {
@@ -57,7 +57,9 @@ export class AuthorListComponent implements OnInit  {
         }
 
         this.selectedInAuthorList.forEach(author => {
-            this.authorList.splice(this.authorList.indexOf(author), 1);
+            if (this.authorList.indexOf(author) !== -1) {
+                this.authorList.splice(this.authorList.indexOf(author), 1);
+            }
         });
         this.selectedInAuthorList = [];
 
