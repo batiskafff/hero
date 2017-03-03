@@ -1,16 +1,10 @@
-import { NO_ERRORS_SCHEMA }          from '@angular/core';
+import { NO_ERRORS_SCHEMA }       from '@angular/core';
+import { async, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, inject }        from '@angular/core/testing';
+import { Http }                   from '@angular/http';
 
-import { AuthorListComponent } from './authorList.component';
-import { AuthorListService }   from '../services/AuthorList.service';
-
-import { async, TestBed, fakeAsync, tick }     from '@angular/core/testing';
-//private authorListService: AuthorListService
-
-import { inject } from '@angular/core/testing';
-import { Http, BaseRequestOptions,
-    HttpModule, ConnectionBackend, RequestOptions } from '@angular/http';
-import { MockBackend } from '@angular/http/testing';
-import { UserService } from './user.service';
+import { AuthorListComponent }    from './authorList.component';
+import { AuthorListService }      from '../services/AuthorList.service';
 
 describe('Author List Eitor component', () => {
     let component: AuthorListComponent;
@@ -30,7 +24,7 @@ describe('Author List Eitor component', () => {
         declarations: [ AuthorListComponent ],
         providers: [ AuthorListService, Http,
             {provide: AuthorListService, useValue: MockGetAuthorList}
-             ],//USE mock
+        ],
         schemas: [ NO_ERRORS_SCHEMA ]
       })
       .compileComponents();

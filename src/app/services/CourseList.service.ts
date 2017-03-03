@@ -28,4 +28,9 @@ export class CourseListService {
             });
     }
 
+    updateCourse(course: ICourse): Promise<void> {
+        return this.http.put(this.requestRoot + '/' + course.id, course)
+            .toPromise()
+            .catch(error => console.error('updateCourse >> ', error));
+    }
 }

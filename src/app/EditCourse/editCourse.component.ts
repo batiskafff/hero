@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }      from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location }               from '@angular/common'
 
 import { Course }                 from '../models/Course';
@@ -20,7 +20,7 @@ export class EditCourseComponent implements OnInit {
     constructor(
         private courseListService: CourseListService,
         private route: ActivatedRoute,
-        private location: Location,
+        private router: Router,
         private authorListService: AuthorListService
     ) {}
 
@@ -40,10 +40,14 @@ export class EditCourseComponent implements OnInit {
     }
 
     goBack(): void {
-        this.location.back();
+        this.router.navigate(['/courses']);
     }
 
-    checkBindings(): void {
-        alert(this.course.authorList);
+    submit(): void {
+        this.courseListService.updateCourse(this.course)
+            .then(() => {
+                console.log('Course was saved succesfull');
+                this.goBack();
+            });
     }
 }
